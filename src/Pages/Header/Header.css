@@ -1,0 +1,16 @@
+.logo{
+   width: 150px; 
+} 
+Nav a{
+    font-size: 18px;
+    text-decoration: none; 
+    margin-right: 30px;
+    padding: 8px;
+    color: #fff !important;
+}
+Nav a:hover{
+    background-color: rgba(91, 190, 226, 0.75);
+    border-radius: 5px;
+    color: bisque;
+    
+}
