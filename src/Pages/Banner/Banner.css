@@ -1,0 +1,11 @@
+.carousel-caption {
+    padding-bottom: 7.25rem !important;
+}
+.carousel-indicators {
+    display: none !important;
+}
+h1{
+    font-size: 50px !important;
+    font-weight: bold;
+
+}
