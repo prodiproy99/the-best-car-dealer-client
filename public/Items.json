@@ -1,0 +1,52 @@
+[
+    {
+        "name": "2009 Porsche Carrera 4S Turbo Convertible",
+        "price": "30,000",
+        "quantity": "12",
+        "supplier": "Joyonto Roy",
+        "description": "Open-top driving is integral to Porsche history.",
+        "img": "https://i.ibb.co/84mSQtF/9-carrera-1-200x150.jpg"
+    },
+    {
+        "name": "2009 Porsche Boxster Base Convertible",
+        "price": "43,000",
+        "quantity": "8",
+        "supplier": "Prodip Roy",
+        "description": "Spending time in the virtual world can be great fun.",
+        "img": "https://i.ibb.co/vwv4xYD/20-boxster-1-200x150.jpg"
+    },
+    {
+        "name": "2009 Porsche Boxster Base Red Convertible",
+        "price": "50,000",
+        "quantity": "10",
+        "supplier": "Dipto Roy",
+        "description": "Open-top driving is integral to Porsche history.",
+        "img": "https://i.ibb.co/J2nYwxB/2-carrera-1-200x150.jpg"
+    },
+    {
+        "name": "2010 Porsche Carrera 4S All-Wheel Drive",
+        "price": "30,400",
+        "quantity": "20",
+        "supplier": "Joy",
+        "description": "Two things that all open-top Porsche cars.",
+        "img": "https://i.ibb.co/NsvBX4Z/4-carrera-1-200x150.jpg"
+    },
+    {
+        "name": "2011 Porsche Boxster Spyder",
+        "price": "300",
+        "quantity": "15",
+        "supplier": "John Doe",
+        "description": "That explains what motivates us; so let’s describe what drives.",
+        "img": " https://i.ibb.co/bK1TSGd/15-boxster-1-200x150.jpg"
+    },
+    {
+        "name": "2011 Porsche Boxster",
+        "price": "45,100",
+        "quantity": "18",
+        "supplier": "Avijit Roy",
+        "description": "Without question, the 911 Carrera S Cabriolet has remained faithful.",
+        "img": "https://i.ibb.co/7JDzV2d/12-boxster-1-200x150.jpg"
+    }
+     
+     
+]

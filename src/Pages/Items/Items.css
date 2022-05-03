@@ -1,0 +1,12 @@
+.main-content{
+    margin-top: 70px;
+}
+h2{
+    font-size: 30px !important;
+}
+.items-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+    margin-top: 50px;
+}

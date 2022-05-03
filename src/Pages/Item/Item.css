@@ -1,0 +1,36 @@
+.item-container{
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border-radius: 10px;
+    background-color: rgb(252 252 252);
+}
+h3{
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    padding: 14px;
+
+}
+span{
+    font-weight: bold;
+}
+p { 
+    margin-bottom: 0.1rem !important; 
+}
+
+.img-container{ 
+    padding: 10px;
+    margin-left: 28px;
+}
+.item-info{
+    padding: 10px;
+    margin-left: 28px;
+}
+.update-btn {
+    background-color: rgb(249 239 239);
+    width: 78px;
+    padding: 6px;
+    text-align: center;
+    border-radius: 2px 8px 2px 8px;
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 18px;
+}
