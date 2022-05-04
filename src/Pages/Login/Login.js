@@ -3,7 +3,8 @@ import { Button, Form } from 'react-bootstrap';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import Loading from '../Loading/Loading';
+import Loading from '../Loading/Loading'; 
+import './Login.css'
 
 const Login = () => {
     const emailRef = useRef('');
@@ -46,9 +47,8 @@ const Login = () => {
         
     }
     return (
-        <div className='container w-50 mx-auto'>
-            {/* <PageTitle title="Login"></PageTitle> */}
-            <h2 className='text-primary text-center mt-2'>Please Login</h2>
+        <div className='container w-50 mx-auto login-form'> 
+            <h2 className='text-primary text-center mt-2 login-title'>Please Login</h2>
             <Form onSubmit={handleSubmit}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Control ref={emailRef} type="email" placeholder="Enter email" required />
@@ -56,14 +56,14 @@ const Login = () => {
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Control ref={passwordRef} type="password" placeholder="Password" required />
                 </Form.Group>
-                <Button variant="primary w-50 mx-auto d-block mb-2" type="submit">
+                <Button variant="primary w-50 mx-auto d-block mb-2 loginBtn" type="submit">
                     Login
                 </Button>
             </Form>
 
             {errorElement}
 
-            <p>New to Genius Car? <Link to="/register" className='text-primary pe-auto text-decoration-none' onClick={navigateRegister}>Please Register</Link> </p>
+            <p>New to car dealer? <Link to="/register" className='text-primary pe-auto text-decoration-none' onClick={navigateRegister}>Please Register</Link> </p>
             
             
         </div>

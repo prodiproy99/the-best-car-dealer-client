@@ -1,0 +1,26 @@
+.login-form {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid #ABABAB;
+    box-sizing: border-box;
+    border-radius: 4px;
+    padding: 30px;
+    margin-top: 50px;
+}
+
+.loginBtn {
+    background: rgba(249, 165, 26, 1) !important;
+    color: #fff;
+    border: none !important;
+    width: 100% !important;
+}
+
+.login-title {
+    font-size: 22px;
+    color: #29282D;
+    text-align: left;
+    margin-bottom: 50px;
+}
+
+.orange {
+    color: #F9A51A !important;
+}
