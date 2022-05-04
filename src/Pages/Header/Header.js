@@ -1,28 +1,27 @@
 import React from 'react';
-import { Container, Nav, Navbar } from 'react-bootstrap';
-import CustomLink from '../CustomLink/CustomLink';
+import { Container, Nav, Navbar } from 'react-bootstrap'; 
 import logo from '../../images/logo-dark.png'
 import './Header.css'
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
         <div className='navbar-container'>
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" bg-slate-700 sticky="top">
                 <Container>
-                    <Navbar.Brand to="#home"> 
+                    <Navbar.Brand to="home"> 
                         <img className='logo' src={logo} alt="" />
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse className='text-black' id="responsive-navbar-nav">
                         <Nav className="ms-auto">
-                            <CustomLink className='decoration-0' to="#home">Home</CustomLink>
-                            <CustomLink to="#items">Items</CustomLink> 
+                        <Nav.Link as={Link} to="home">Home</Nav.Link>
+                        <Nav.Link as={Link} to="item">Item</Nav.Link> 
                         </Nav>
                         <Nav>
-                            <CustomLink to="#deets">Login</CustomLink>
-                            <CustomLink eventKey={2} to="#memes">
-                                Dank memes
-                            </CustomLink>
+                        <Nav.Link as={Link} to="login">
+                                Login
+                            </Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
