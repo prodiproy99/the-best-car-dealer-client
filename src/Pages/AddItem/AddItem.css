@@ -1,0 +1,19 @@
+#field-control{
+    border-bottom: 1px solid #aaa;
+    border-radius: 10px; 
+    padding: 10px;
+}
+#field-control:focus{
+    border-bottom: 1px solid #aaa;
+    border-radius: 10px; 
+    padding: 10px;
+}
+.addItemBtn {
+    background: rgba(249, 165, 26, 1) !important;
+    color: #fff;
+    border: none !important;
+    width: 100% !important;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 10px;
+  }

@@ -18,9 +18,10 @@
     font-size: 16px;
   }
   
-  
+  textarea:focus,
   input[type="text"]:focus,
   input[type="password"]:focus,
+  input[type="number"]:focus, 
   input[type="email"]:focus,
   .uneditable-input:focus {
     border-color: rgba(126, 239, 104, 0.8);
