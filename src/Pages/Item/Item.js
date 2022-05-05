@@ -20,8 +20,8 @@ const Item = ({ item }) => {
                 <p><span>Price</span>: ${price}</p>
                 <p><span>Supplier</span>: {supplier}</p>
                 <p> <span>Description: </span>{description}</p>
-                <div className='update-btn'>
-                    <button onClick={() => navigateToItemDetails(_id)}>Update</button>
+                <div>
+                    <button className='update-btn' onClick={() => navigateToItemDetails(_id)}>Update</button>
                 </div>
             </div>
         </div>

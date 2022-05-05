@@ -25,9 +25,8 @@ p {
     margin-left: 28px;
 }
 .update-btn {
-    background-color: rgb(249 239 239);
-    width: 78px;
-    padding: 6px;
+    background-color: rgb(249 239 239); 
+    padding: 10px;
     text-align: center;
     border-radius: 2px 8px 2px 8px;
     margin-top: 20px;
