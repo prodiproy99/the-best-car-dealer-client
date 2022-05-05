@@ -3,6 +3,7 @@ import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import Loading from '../Loading/Loading';
+import SocialLogin from '../SocialLogin/SocialLogin';
 import './Register.css'
 
 const Register = () => {
@@ -52,6 +53,7 @@ const Register = () => {
 
 
                 </div>
+                <SocialLogin />
                 
             </div>
         </div>

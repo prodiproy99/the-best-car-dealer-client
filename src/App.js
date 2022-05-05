@@ -10,6 +10,7 @@ import RequireAuth from './Pages/RequireAuth/RequireAuth';
 import Register from './Pages/Register/Register';
 import ManageInventories from './Pages/ManageInventories/ManageInventories';
 import AddItem from './Pages/AddItem/AddItem';
+import { ToastContainer } from 'react-bootstrap';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
          }></Route>
        </Routes>
        <Footer></Footer>
+       <ToastContainer />
     </div>
   );
 }

@@ -5,6 +5,7 @@ import auth from '../../firebase.init';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import Loading from '../Loading/Loading'; 
 import './Login.css'
+import SocialLogin from '../SocialLogin/SocialLogin';
 
 const Login = () => {
     const emailRef = useRef('');
@@ -65,7 +66,7 @@ const Login = () => {
 
             <p>New to car dealer? <Link to="/register" className='text-primary pe-auto text-decoration-none' onClick={navigateRegister}>Please Register</Link> </p>
             
-            
+            <SocialLogin></SocialLogin>
         </div>
     );
 };

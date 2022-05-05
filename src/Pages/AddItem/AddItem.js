@@ -1,4 +1,5 @@
 import React from 'react';
+import { Toast } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import './AddItem.css';
 
@@ -6,6 +7,7 @@ const AddItem = () => {
     const { register, handleSubmit } = useForm();
 
     const onSubmit = data => {
+        Toast("Successfully added");
         console.log(data)
         const url = 'http://localhost:5000/item'
         fetch(url, {
@@ -17,8 +19,9 @@ const AddItem = () => {
         })
         .then(res => res.json())
         .then(result => {
-            console.log(result);
+            console.log(result); 
         })
+ 
         
     };
 
