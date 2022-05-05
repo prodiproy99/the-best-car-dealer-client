@@ -4,8 +4,8 @@ import useItemDetails from '../../Hooks/useItemDetails';
 
 const ItemDetails = () => {
     const navigate = useNavigate()
-    const { itemId } = useParams()
-    const [item] = useItemDetails(itemId)
+    const { id } = useParams()
+    const [item] = useItemDetails(id)
     const [delivered, setDelivered] = useState(5);
     const [stock, setStock] = useState(0)
 
