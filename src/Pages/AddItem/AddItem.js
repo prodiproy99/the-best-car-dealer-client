@@ -1,13 +1,14 @@
-import React from 'react';
-import { Toast } from 'react-bootstrap';
+import React from 'react'; 
 import { useForm } from 'react-hook-form';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './AddItem.css';
 
 const AddItem = () => {
     const { register, handleSubmit } = useForm();
 
     const onSubmit = data => {
-        Toast("Successfully added");
+        toast("Successfully added");
         console.log(data)
         const url = 'http://localhost:5000/item'
         fetch(url, {
@@ -19,7 +20,7 @@ const AddItem = () => {
         })
         .then(res => res.json())
         .then(result => {
-            console.log(result); 
+            console.log(result);  
         })
  
         

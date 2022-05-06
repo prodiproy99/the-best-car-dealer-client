@@ -9,16 +9,17 @@ import Login from './Pages/Login/Login';
 import RequireAuth from './Pages/RequireAuth/RequireAuth';
 import Register from './Pages/Register/Register';
 import ManageInventories from './Pages/ManageInventories/ManageInventories';
-import AddItem from './Pages/AddItem/AddItem';
-import { ToastContainer } from 'react-bootstrap';
+import AddItem from './Pages/AddItem/AddItem'; 
 import MyItems from './Pages/MyItems/MyItems';
+import { ToastContainer } from 'react-toastify';
 import MyBlog from './Pages/MyBlog/MyBlog';
 import NotFound from './Pages/NotFound/NotFound';
 
 function App() {
   return (
     <div>
-      <Header></Header>
+      <Header></Header> 
+       <ToastContainer />
        <Routes>
          <Route path='/' element={<Home />}></Route>
          <Route path='/home' element={<Home />}></Route>
@@ -35,8 +36,9 @@ function App() {
          }></Route>
          <Route path='*' element={<NotFound />}></Route>
        </Routes>
+      
        <Footer></Footer>
-       <ToastContainer />
+      
     </div>
   );
 }
