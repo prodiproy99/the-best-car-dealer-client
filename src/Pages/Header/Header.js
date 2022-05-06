@@ -23,14 +23,14 @@ const Header = () => {
                     <Navbar.Collapse className='text-black' id="responsive-navbar-nav">
                         <Nav className="ms-auto">
                             <Nav.Link as={Link} to="home">Home</Nav.Link>
-                            <Nav.Link as={Link} to="item">Item</Nav.Link>
+                            <Nav.Link as={Link} to="myBlog">My Blog</Nav.Link>
                         </Nav>
                         <Nav>
                             {
                                 user && <>
-                                 <Nav.Link as={Link} to="addItem">Add Item</Nav.Link>
-                                 <Nav.Link as={Link} to=" ">Manage Items</Nav.Link>
-                                 <Nav.Link as={Link} to=" ">My items</Nav.Link> 
+                                 <Nav.Link as={Link} to="/addItem">Add Item</Nav.Link>
+                                 <Nav.Link as={Link} to="/manageInventories">Manage Items</Nav.Link>
+                                 <Nav.Link as={Link} to="/myItem">My items</Nav.Link> 
                                 </>
                             }
                           {

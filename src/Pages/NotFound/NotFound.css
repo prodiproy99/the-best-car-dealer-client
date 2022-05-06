@@ -1,0 +1,13 @@
+.notFound{
+    background: #f7f7f7;
+    height: 100vh;
+}
+.notFound h2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 150px;
+    font-size: 50px !important; 
+
+}
+ 

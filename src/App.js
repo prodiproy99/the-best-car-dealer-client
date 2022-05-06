@@ -11,6 +11,9 @@ import Register from './Pages/Register/Register';
 import ManageInventories from './Pages/ManageInventories/ManageInventories';
 import AddItem from './Pages/AddItem/AddItem';
 import { ToastContainer } from 'react-bootstrap';
+import MyItems from './Pages/MyItems/MyItems';
+import MyBlog from './Pages/MyBlog/MyBlog';
+import NotFound from './Pages/NotFound/NotFound';
 
 function App() {
   return (
@@ -23,11 +26,14 @@ function App() {
          <Route path='/register' element={<Register />}></Route>
          <Route path='/manageInventories' element={<ManageInventories />}></Route>
          <Route path='/addItem' element={<AddItem />}></Route>
+         <Route path='/myItem' element={<MyItems />}></Route>
+         <Route path='/myBlog' element={<MyBlog />}></Route>
          <Route path='/item/:id' element={
            <RequireAuth>
              <ItemDetails />
            </RequireAuth>
          }></Route>
+         <Route path='*' element={<NotFound />}></Route>
        </Routes>
        <Footer></Footer>
        <ToastContainer />
