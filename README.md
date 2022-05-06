@@ -1,8 +1,19 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Website link
+[Car Dealer](https://dapper-zuccutto-c8ca13.netlify.app/).
 
 ## Available Scripts
+
+## Project Description
+The best car dealer website for all dealer. They are stok product in this website.
+
+- used react firebase hook
+- install react router
+- used react bootstrap 
+- created banner, myblog, login, NotFound page and others
+- using useState, useEffect and axios
+- Responsive website
 
 In the project directory, you can run:
 
