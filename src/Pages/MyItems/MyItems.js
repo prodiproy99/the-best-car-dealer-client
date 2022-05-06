@@ -27,7 +27,7 @@ const MyItems = () => {
             <h2>Your order list:{myItems.length} </h2>
             {
                 myItems.map(myItem => <div key={myItem._id}>
-                    <p>{myItem.email} : {myItem.name} </p>
+                    <p> {myItem.name} </p>
 
                 </div>)
             }

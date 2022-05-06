@@ -6,7 +6,7 @@
 h3{
     font-size: 18px !important;
     font-weight: 600 !important;
-    padding: 14px;
+    padding: 14px !important;
 
 }
 span{
@@ -33,3 +33,4 @@ p {
     font-weight: bold;
     font-size: 18px;
 }
+

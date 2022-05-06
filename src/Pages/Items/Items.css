@@ -10,3 +10,14 @@ h2{
     gap: 50px;
     margin-top: 50px;
 }
+/* make services responsive with media quary */
+@media only screen and (max-width: 576px) {
+    .items-container{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+@media only screen and (min-width: 577px) and (max-width: 992px) {
+    .items-container{
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}

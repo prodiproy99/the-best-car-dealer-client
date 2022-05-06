@@ -26,8 +26,7 @@ const ManageItem = ({ manageItem }) => {
             <div className="container">
                 <div className="row mt-5">
                     <div className="col-md-3 border-b-2">
-                        <p><span>Name:</span> {name}</p>
-                        <p><span>Name:</span> {_id}</p>
+                        <p><span>Name:</span> {name}</p> 
                     </div>
                     <div className="col-md-2">
                         <p><span>Quantity:</span> {quantity}</p>
