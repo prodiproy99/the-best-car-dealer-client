@@ -1,9 +1,9 @@
-#field-control{
+.field-control{
     border-bottom: 1px solid #aaa;
     border-radius: 10px; 
     padding: 10px;
 }
-#field-control:focus{
+.field-control:focus{
     border-bottom: 1px solid #aaa;
     border-radius: 10px; 
     padding: 10px;

@@ -6,9 +6,9 @@ import './Items.css'
 const Items = () => {
     const [items, setItems] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/item')
+        fetch('https://calm-plains-80222.herokuapp.com/item')
             .then(res => res.json())
-            .then(data => setItems(data.slice(0, 6)))
+            .then(data => setItems(data.slice(0, 9)))
     }, [])
     return (
         <div>

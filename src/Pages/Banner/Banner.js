@@ -13,7 +13,7 @@ const Banner = () => {
 
                 <Carousel.Caption>
                         <h1>The wind is <br /> not even close to us </h1>
-                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                        <p>The best car dealer Website</p>
                     </Carousel.Caption>
                     <img
                         className="d-block w-100"
@@ -26,7 +26,7 @@ const Banner = () => {
 
                 <Carousel.Caption>
                 <h1>We have everything  <br /> Your car needs! </h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <p>The best car dealer Website</p>
                     </Carousel.Caption>
                     <img
                         className="d-block w-100"

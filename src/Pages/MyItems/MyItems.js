@@ -1,20 +1,25 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from 'react'; 
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
+import MyItemDetails from '../MyItemDetails/MyItemDetails';
 
 const MyItems = () => {
     const [user] = useAuthState(auth)
-    const [myItems, setMyItems] = useState([]);
-    const navigate = useNavigate()
+    const [myItems, setMyItems] = useState([]); 
     useEffect(() => {
         const getItem = async () => {
             const email = user?.email;
-            const url = `http://localhost:5000/item?email=${email}`;
+            console.log(email);
+            const url = `https://calm-plains-80222.herokuapp.com/item?email=${email}`;
             try {
-                const { data } = await axios.get(url)
-                setMyItems(data);
+
+                const { data } = await axios.get(url);
+                const myItem = data?.filter(stock => stock?.email === user?.email)
+                console.log(myItem)
+                console.log(data)
+                setMyItems(myItem);
+
             }
             catch (error) {
                 console.log(error.message);
@@ -26,10 +31,11 @@ const MyItems = () => {
         <div className='w-50 mx-auto'>
             <h2>Your order list:{myItems.length} </h2>
             {
-                myItems.map(myItem => <div key={myItem._id}>
-                    <p> {myItem.name} </p>
-
-                </div>)
+                myItems.map(myItem => <MyItemDetails 
+                key={myItem._id}
+                myItem = {myItem}
+                
+                > </MyItemDetails>)
             }
         </div>
     );

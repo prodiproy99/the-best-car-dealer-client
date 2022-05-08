@@ -1,8 +1,10 @@
-import React, { useState } from 'react';  
+import React, { useState } from 'react';
 
-const ManageItem = ({ manageItem }) => {
-    const { _id, name, price, supplier, quantity } = manageItem;
-    const[manageItems, setManageItems] = useState();
+const MyItemDetails = ({myItem}) => {
+    const { _id, name, price, quantity, img } = myItem;
+
+    const[myItems, setMyItems] = useState();
+
 
     const handleDelete = (id) =>{
         const proceed = window.confirm('Are you sure?')
@@ -15,14 +17,12 @@ const ManageItem = ({ manageItem }) => {
             .then(res => res.json())
             .then(data => { 
                 console.log(data);
-                const remaining = manageItems.filter(manageItem => manageItem._id !== id)
+                const remaining = myItems.filter(myItem => myItem._id !== id)
                 console.log(remaining)
-                setManageItems(remaining); 
+                setMyItems(remaining); 
             })
         }
     }
-
-
     return (
         <div>
             <div className="container">
@@ -37,11 +37,11 @@ const ManageItem = ({ manageItem }) => {
                         <p><span>Price:</span> {price}</p>
                     </div>
                     <div className="col-md-2">
-                        <p><span>Supplier:</span> {supplier}</p>
+                         <img width= "30px" src={img} alt="" />
                     </div>
                      
                     <div className="col-md-3">
-                         <button onClick={() => handleDelete(manageItem._id)} className='btn btn-danger'>Delete</button> 
+                         <button onClick={() => handleDelete(myItem._id)} className='btn btn-danger'>Delete</button> 
                     </div>
                 </div>
 
@@ -51,4 +51,4 @@ const ManageItem = ({ manageItem }) => {
     );
 };
 
-export default ManageItem;
+export default MyItemDetails;
