@@ -8,7 +8,7 @@ const Items = () => {
     useEffect(() => {
         fetch('https://calm-plains-80222.herokuapp.com/item')
             .then(res => res.json())
-            .then(data => setItems(data.slice(0, 9)))
+            .then(data => setItems(data.slice(0, 6)))
     }, [])
     return (
         <div>

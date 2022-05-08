@@ -80,7 +80,7 @@ const ItemDetails = () => {
                 <h4> Restok Car:
                     <form className='d-flex flex-column' onSubmit={handleSubmit(onSubmit)}>
 
-                        <input className='mb-2' placeholder='item name' type='number' id='field-control' {...register("quantity", { required: true })} />
+                        <input className='mb-2' placeholder='Add quantity' type='number' id='field-control' {...register("quantity", { required: true })} />
                         <input className='addItemBtn' type="submit" value='Increase Quantity' />
                     </form>
                 </h4>
