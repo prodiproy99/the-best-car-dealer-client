@@ -1,62 +1,134 @@
 import React from 'react';
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { Link, useNavigate } from 'react-router-dom';
+import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
+import { useForm } from "react-hook-form"; 
+import { Link, useLocation, useNavigate } from 'react-router-dom'; 
 import Loading from '../Loading/Loading';
-import SocialLogin from '../SocialLogin/SocialLogin';
-import './Register.css'
 
 const Register = () => {
+    const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
+    const { register, formState: { errors }, handleSubmit } = useForm();
     const [
         createUserWithEmailAndPassword,
         user,
         loading,
-    ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true }); 
-    const navigate = useNavigate();
+        error,
+    ] = useCreateUserWithEmailAndPassword(auth);
 
-    if (loading) {
+    const [updateProfile, updating, updateError] = useUpdateProfile(auth); 
+
+    const navigate = useNavigate();
+    const location = useLocation();
+    let from = location.state?.from?.pathname || "/";
+
+    let signInError;
+
+    if (loading || gLoading || updating) {
         return <Loading></Loading>
     }
 
-    const handleSubmitRegister = async (e) => {
-        e.preventDefault();
-        const name = e.target.name.value;
-        const email = e.target.email.value;
-        const password = e.target.password.value; 
-        await createUserWithEmailAndPassword(email, password);
-
-    }
-    if (user) {
-        navigate('/home')
+    if (error || gError || updateError) {
+        signInError = <p className='text-red-500'><small>{error?.message || gError?.message || updateError?.message}</small></p>
     }
 
-    const navigateLogin = (e) => {
-        navigate('/login')
+    if (user || gUser) {
+        navigate(from, { replace: true });
     }
 
+    const onSubmit = async data => {
+        await createUserWithEmailAndPassword(data.email, data.password);
+        await updateProfile({ displayName: data.name });
+        // console.log('update done');
+        
+    }
     return (
-        <div>
-             <div className="container">
-                <div className="row w-50 mx-auto register-form-container">
-                    <h2 className='register-title'>Please Register</h2>
-                    <form onSubmit={handleSubmitRegister} className='register-form'>
-                        <input type="text" name="name" id="" placeholder='your name' />
+        <div className='flex justify-center items-center my-20'>
+            <div className="card w-96 bg-base-100 shadow-xl">
+                <div className="card-body">
+                    <h2 className="text-center text-2xl font-bold">Sign Up</h2>
+                    <form onSubmit={handleSubmit(onSubmit)}>
 
-                        <input type="email" name="email" id="" placeholder='email address' required />
+                        <div className="form-control w-full max-w-xs">
+                            <label className="label">
+                                <span className="label-text">Name</span>
+                            </label>
+                            <input
+                                type="text"
+                                placeholder="Your Name"
+                                className="input input-bordered w-full max-w-xs"
+                                {...register("name", {
+                                    required: {
+                                        value: true,
+                                        message: 'Name is Required'
+                                    }
+                                })}
+                            />
+                            <label className="label">
+                                {errors.name?.type === 'required' && <span className="label-text-alt text-red-500">{errors.name.message}</span>}
+                            </label>
+                        </div>
 
-                        <input type="password" name="password" id="" placeholder='password' required />
- 
-                        <input className='registerBtn text-white mx-auto d-block mb-2' type="submit" value="Register" />
+                        <div className="form-control w-full max-w-xs">
+                            <label className="label">
+                                <span className="label-text">Email</span>
+                            </label>
+                            <input
+                                type="email"
+                                placeholder="Your Email"
+                                className="input input-bordered w-full max-w-xs"
+                                {...register("email", {
+                                    required: {
+                                        value: true,
+                                        message: 'Email is Required'
+                                    },
+                                    pattern: {
+                                        value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
+                                        message: 'Provide a valid Email'
+                                    }
+                                })}
+                            />
+                            <label className="label">
+                                {errors.email?.type === 'required' && <span className="label-text-alt text-red-500">{errors.email.message}</span>}
+                                {errors.email?.type === 'pattern' && <span className="label-text-alt text-red-500">{errors.email.message}</span>}
+                            </label>
+                        </div>
+                        <div className="form-control w-full max-w-xs">
+                            <label className="label">
+                                <span className="label-text">Password</span>
+                            </label>
+                            <input
+                                type="password"
+                                placeholder="Password"
+                                className="input input-bordered w-full max-w-xs"
+                                {...register("password", {
+                                    required: {
+                                        value: true,
+                                        message: 'Password is Required'
+                                    },
+                                    minLength: {
+                                        value: 6,
+                                        message: 'Must be 6 characters or longer'
+                                    }
+                                })}
+                            />
+                            <label className="label">
+                                {errors.password?.type === 'required' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
+                                {errors.password?.type === 'minLength' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
+                            </label>
+                        </div>
 
+                        {signInError}
+                        <input className='btn btn-primary w-full max-w-xs text-white' type="submit" value="Sign Up" />
                     </form>
-                    <p>Already Register? <Link to='/login' className='orange text-decoration-none' onClick={navigateLogin}>Please Login?</Link></p>
-
-
+                    <p><small className='text-black'>Already have an account? <Link className='text-primary' to="/login">Please login</Link></small></p>
+                    <div className="divider">OR</div>
+                    <button
+                        onClick={() => signInWithGoogle()}
+                        className="btn btn-primary"
+                    >Continue with Google</button>
                 </div>
-                <SocialLogin />
-                
             </div>
-        </div>
+        </div >
     );
 };
 

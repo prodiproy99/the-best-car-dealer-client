@@ -13,9 +13,7 @@ const ItemDetails = () => {
     const [deliver, setDeliver] = useState()
     console.log(item)
 
-
-
-
+ 
     const manageInventories = () => {
         navigate('/manageInventories')
     }

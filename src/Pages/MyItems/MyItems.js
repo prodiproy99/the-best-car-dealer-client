@@ -28,7 +28,7 @@ const MyItems = () => {
         getItem()
     }, [user])
     return (
-        <div className='w-50 mx-auto'>
+        <div className='w-50 mx-auto mb-96 mt-10'>
             <h2>Your order list:{myItems.length} </h2>
             {
                 myItems.map(myItem => <MyItemDetails 

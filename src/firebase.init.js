@@ -11,7 +11,7 @@ const firebaseConfig = {
   projectId: "the-best-car-dealer",
   storageBucket: "the-best-car-dealer.appspot.com",
   messagingSenderId: "1079478558298",
-  appId: "1:1079478558298:web:fd78fbb6c7fff1e70dc263"
+  appId: "1:1079478558298:web:3a685b218e41072e0dc263"
 };
 
 // Initialize Firebase
